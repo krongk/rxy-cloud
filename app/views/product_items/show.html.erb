@@ -1,0 +1,17 @@
+<ul class="breadcrumb">
+  <li><%= link_to '修改', edit_product_item_path(@product_item), class: 'btn btn-primary', type: 'button' %><span class="divider">/</span></li>
+  <li><%= link_to '删除', @product_item, method: :delete, data: { confirm: '确定要删除?' }, class: 'btn btn-reverse', type: 'button' %><span class="divider">/</span></li>
+    <li><%= link_to '返回', product_items_url %></li>
+</ul>
+
+<h2>
+  <%= @product_item.title %>
+</h2>
+
+<p>
+  <%= image_tag @product_item.image_url %>
+</p>
+
+<p>
+  <%= raw @product_item.content %>
+</p>

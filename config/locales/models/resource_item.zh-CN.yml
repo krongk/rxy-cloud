@@ -1,0 +1,10 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      resource_item: 资源
+    attributes:
+      resource_item:
+        cate: 分类
+        name: 名称
+        path: 路径

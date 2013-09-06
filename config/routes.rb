@@ -1,5 +1,24 @@
 RxyCloud::Application.routes.draw do
-  root :to => "home#index"
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :resource_items
+  resources :posts
+  resources :product_items
+  resources :product_cates
+  resources :comments
+
+  get "page/index"
+  get "page/about"
+  get "page/features"
+  get "page/services"
+  get "page/portfolio"
+  get "page/product_item"
+  get "page/blog"
+  get "page/blogpost"
+  get "page/private"
+  get "page/help"
+  get "page/faq"
+  
+  root :to => "page#index"
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
 end

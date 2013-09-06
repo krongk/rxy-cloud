@@ -1,0 +1,42 @@
+<%= content_for(:head) do %>
+  <%= stylesheet_link_tag "theme/blog" %>
+<% end %>
+
+<div id="blog">
+    <div class="container">
+        <div class="section_header">
+            <h3>行业论坛</h3>
+
+            <input type="text" class="input-large search-query" placeholder="搜索...">
+        </div>
+
+        <!-- Post Row -->
+        <div class="row post_row">
+          <!-- Post -->
+          <% @posts.each do |post| %>
+            <div class="span4 post">
+                <div class="img">
+                    <a href="blogpost.html">
+                        <img src="/assets/blog1.png" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h5><a href="blogpost.html">Clean Canvas beautiful responsive theme.</a></h5>
+                    <span class="date">Wed, 12 Dec.</span>
+                    <p>
+                        There are many variations of passages of generators on the  embarrassing hidden in  slightly distracted by these distribution of letters, as opposed.</p>
+                </div>
+                <div class="author_box">
+                    <h6>Alejandra Galvan</h6>
+                    <p>Creative Director</p>
+                </div>
+                <a class="plus_wrapper" href="blogpost.html">
+                    <span>&#43;</span>
+                </a>
+            </div>
+          <% end %>
+        </div>
+        
+        <%= will_paginate @posts %>
+    </div>
+</div>

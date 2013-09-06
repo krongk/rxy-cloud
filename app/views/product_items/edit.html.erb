@@ -1,0 +1,12 @@
+<ul class="breadcrumb">
+  <li><%= link_to '添加分类', new_product_cate_path, class: 'btn btn-primary', type: 'button' %><span class="divider">/</span></li>
+  <li><%= link_to '添加案例', new_product_item_path, class: 'btn btn-primary', type: 'button' %><span class="divider">/</span></li>
+    <li><%= link_to '返回', product_items_url %></li>
+</ul>
+
+<h1>修改案例</h1>
+
+<%= render 'form' %>
+
+<%= link_to '显示', @product_item %> |
+<%= link_to '返回', product_items_path %>

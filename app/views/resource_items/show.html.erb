@@ -1,0 +1,19 @@
+<p>
+  <%= @resource_item.name %>
+</p>
+
+<p>
+  <%= image_tag @resource_item.avatar.url(:thumb) %><br>
+  复制图片地址：<input type="input" value="<%= @resource_item.avatar.url(:thumb) %>"/>
+</p>
+<p>
+  <%= image_tag @resource_item.avatar.url(:medium) %><br>
+  复制图片地址：<input type="input" value="<%= @resource_item.avatar.url(:medium) %>"/>
+</p>
+<p>
+  <%= image_tag @resource_item.avatar.url %><br>
+  复制图片地址：<input type="input" value="<%= @resource_item.avatar.url %>"/>
+</p>
+
+
+|<%= link_to '返回', user_path(current_user) %>

@@ -1,0 +1,25 @@
+<div class="text-right">
+  <ul class="breadcrumb">
+    <li><%= link_to '修改文章', edit_post_path(@post), class: 'btn btn-primary', type: 'button' %><span class="divider">/</span></li>
+    <li><%= link_to '删除文章', @post, method: :delete, data: { confirm: '确定要删除?' }, class: 'btn btn-reverse', type: 'button' %><span class="divider">/</span></li>
+    <li><%= link_to '返回', posts_url %></li>
+  </ul>
+</div>
+
+<div class="well">
+  <h2>
+    <%= @post.title %>
+  </h2>
+
+  <hr>
+  <p>
+    <%= raw @post.content %>
+  </p>
+
+  <p>
+    <strong>Cate:</strong>
+    <%= @post.cate %>
+    <strong>Keywords:</strong>
+    <%= @post.keywords %>
+  </p>
+</div>

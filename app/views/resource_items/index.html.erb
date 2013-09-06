@@ -1,0 +1,33 @@
+<ul class="breadcrumb">
+  <li><%= link_to '添加图片', new_resource_item_path, class: 'btn btn-primary', type: 'button' %><span class="divider">/</span></li>
+  <li><%= link_to '返回', user_path(current_user), class: 'btn btn-primary', type: 'button' %><span class="divider">/</span></li>
+</ul>
+
+
+<h1>资源图片列表</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>图片</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resource_items.each do |resource_item| %>
+      <tr>
+        <td><%= resource_item.name %></td>
+        <td><%= image_tag resource_item.avatar.url(:thumb) %></td>
+        <td><%= link_to '查看', resource_item %></td>
+        <td><%= link_to '删除', resource_item, method: :delete, data: { confirm: '确定?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

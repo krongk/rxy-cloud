@@ -1,0 +1,30 @@
+<h1>文章管理</h1>
+
+<ul class="breadcrumb">
+  <li><%= link_to '添加文章', new_post_path, class: 'btn btn-primary', type: 'button' %></li>
+</ul>
+
+<table class="table table-bordered table-stripped">
+  <thead>
+    <tr>
+      <th>标题</th>
+      <th>分类</th>
+      <th colspan="3">操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.cate %></td>
+        <td><%= link_to '查看', post %></td>
+        <td><%= link_to '修改', edit_post_path(post) %></td>
+        <td><%= link_to '删除', post, method: :delete, data: { confirm: '确定要删除?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

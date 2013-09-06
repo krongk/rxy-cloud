@@ -1,0 +1,42 @@
+<div class="navbar transparent navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">
+            <strong>瑞信云科技</strong>
+        </a>
+        <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+                <li><a href="/" class="active">首页</a></li>
+                <li><a href="/page/services">服务项目</a></li>
+                <li><a href="/page/features">功能列表</a></li>
+                <li><a href="/page/portfolio">模版展示</a></li>
+                <li><a href="/page/product_item">成功案例</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        行业讲坛
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <% Post.recent(5).each do |post| %>
+                            <li><%= link_to post.title, "/page/blog?id=#{post.id}", target: '_blank'%></li>
+                        <% end %>
+                        <li><a href="/page/blog">更多...</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">联系我们</a></li>
+                <% if user_signed_in? %>
+                    <li><%= link_to '后台主页', user_path(current_user), class: "btn-header" %></li>
+                    <li><%= link_to '退出', destroy_user_session_path, :method=>'delete', class: "btn-header" %></li>
+                <% else %>
+                    <li><%= link_to '登录', new_user_session_path, class: "btn-header" %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>

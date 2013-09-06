@@ -1,0 +1,14 @@
+<%= simple_form_for(@resource_item, :html => {:multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%#= f.input :cate, priority: [ "案例图片" ], collection: [ "", "视频", "文件"] %>
+    <%= f.input :name %>
+    <%#= f.input :path %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

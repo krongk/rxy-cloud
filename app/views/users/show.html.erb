@@ -1,3 +1,17 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<h3>后台管理</h3>
+<p>当前登录用户: <%= @user.name %>， Email: <%= @user.email if @user.email %></p>
+
+<div class="row row-fluid well">
+  <div class="span3 box">
+    <%= link_to "文章管理", posts_url, class: "btn btn-large btn-primary", type: "button" %>
+  </div>
+  <div class="span3 box">
+    <%= link_to "项目案例", product_items_url, class: "btn btn-large btn-primary", type: "button" %>
+  </div>
+  <div class="span3 box">
+    <%= link_to "图片管理", resource_items_url, class: "btn btn-large btn-primary", type: "button" %>
+  </div>
+  <div class="span3 box">
+    <%= link_to "留言管理", comments_url, class: "btn btn-large btn-primary", type: "button" %>
+  </div>
+</div>

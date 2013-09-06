@@ -1,0 +1,16 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      comment: 用户留言
+    attributes:
+      comment:
+        name: 姓名
+        email: 电子邮箱
+        mobile_phone: 手机号码
+        content: 内容
+        is_processed: 是否审阅
+    errors:
+      comment: 
+  helpers:
+    comment: 

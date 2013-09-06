@@ -1,0 +1,11 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      product_item: 案例
+    attributes:
+      product_item:
+        product_cate: 分类
+        title: 标题
+        content: 内容
+        image_url: 图片地址
