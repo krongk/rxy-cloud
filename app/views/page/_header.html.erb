@@ -23,12 +23,12 @@
                     </a>
                     <ul class="dropdown-menu">
                         <% Post.recent(5).each do |post| %>
-                            <li><%= link_to post.title, "/page/blog?id=#{post.id}", target: '_blank'%></li>
+                            <li><%= link_to post.title, "/blogpost?id=#{post.id}", target: '_blank'%></li>
                         <% end %>
                         <li><a href="/page/blog">更多...</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">联系我们</a></li>
+                <li><a href="/page/about">联系我们</a></li>
                 <% if user_signed_in? %>
                     <li><%= link_to '后台主页', user_path(current_user), class: "btn-header" %></li>
                     <li><%= link_to '退出', destroy_user_session_path, :method=>'delete', class: "btn-header" %></li>

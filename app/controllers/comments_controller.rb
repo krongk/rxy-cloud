@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, except: [:new, :create]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.page(params[:page]).order("created_at DESC")
   end
 
   # GET /comments/1
@@ -28,7 +29,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to '/', notice: '留言已经提交，我们会尽快与您联系，谢谢您的关注.' }
         format.json { render action: 'show', status: :created, location: @comment }
       else
         format.html { render action: 'new' }

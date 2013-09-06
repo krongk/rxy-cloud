@@ -5,8 +5,8 @@
     <%= f.input :name %>
     <%= f.input :email %>
     <%= f.input :mobile_phone %>
-    <%= f.input :content %>
-    <%= f.input :is_processed %>
+    <%= f.input :content, input_html: {rows: 10, cols: 8} %>
+    <%#= f.input :is_processed %>
   </div>
 
   <div class="form-actions">

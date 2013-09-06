@@ -5,7 +5,8 @@
     <%= f.input :title, input_html: {class: "input-block-level"} %>
     <%#= f.input :content, input_html: {class: "input-block-level", rows: 30} %>
     <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'}, height: "600px" } %>
-    <%= f.input :cate %>
+    <%#= f.input :cate %>
+    <%= f.input :image_url %>
     <%= f.input :keywords %>
   </div>
 

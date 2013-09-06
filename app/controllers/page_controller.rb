@@ -5,6 +5,7 @@ class PageController < ApplicationController
   end
 
   def about
+    @comment = Comment.new
   end
 
   def features
@@ -24,7 +25,7 @@ class PageController < ApplicationController
   end
 
   def blogpost
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id] || 1)
   end
 
   def private

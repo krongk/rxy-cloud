@@ -18,9 +18,13 @@
   <body class="pull_top <%= controller_name %> <%= action_name %>">
     <%= render 'page/header' %>
 
+    <div id="showcase">
+      <div class="container">
+        <%= render 'layouts/messages' %>
+      </div>
+    </div>
 
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+    <%= yield %>
 
  
     <%= render 'page/footer' %>

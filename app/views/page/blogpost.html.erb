@@ -1,0 +1,137 @@
+<%= content_for(:head) do %>
+  <%= stylesheet_link_tag "theme/blogpost" %>
+<% end %>
+
+
+<div id="blog_post">
+    <div class="container">
+        <div class="section_header">
+            <h3>行业讲坛</h3>
+
+            <input type="text" class="input-large search-query" placeholder="搜索...">
+        </div>
+
+        <div class="row">
+            <div class="span8">
+                <%#= image_tag @post.image_url %>
+
+                <div class="post_content">
+                    <h2><%= @post.title %></h2>
+                    <span class="date"><%= @post.created_at.to_s(:db) %></span>
+                    <%= raw @post.content %>
+                    
+                    <div class="author_box">
+                        <div class="author"><%= @post.keywords %></div>
+                    </div>
+                </div>
+
+           
+                <div class="new_comment">
+                    <h4>给我们留言</h4>
+                    <form accept-charset="UTF-8" action="/comments" id="new_comment" method="post">
+                        <input name="utf8" type="hidden" value="&#x2713;" />
+                        <input name="authenticity_token" type="hidden" value="uV/dlXiSmha2AdbSoO0R6fojOEPBqxabidgXEXjvW64=" />   
+                        
+                        <div class="row">
+                            <div class="span4">
+                                <input type="text" name="comment[name]" placeholder="姓名" />
+                            </div>
+                            <div class="span4">
+                                <input type="text" name="comment[mobile_phone]" placeholder="手机号码, 11位" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span8">
+                                <textarea rows="3" name="comment[content]" placeholder="内容"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span8">
+                                <input type="submit" value="提交", class="btn send" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- SideBar -->
+            <div class="span3 sidebar offset1">
+                <div class="box">
+                    <div class="sidebar_header">
+                        <h4>Menu</h4>
+                    </div>
+
+                    <ul class="sidebar_menu">
+                        <ul>
+                            <li><a href="#">Coffee</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Music</a></li>
+                            <li><a href="#">Photography</a></li>
+                            <li><a href="#">Packaging   </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                
+                <div class="box box2">
+                    <div class="sidebar_header">
+                        <h4>Recent Posts</h4>
+                    </div>
+
+                    <div class="recent">
+                        <span>
+                            <img src="/assets/recent_photos.jpg" alt="">
+                        </span>
+                        <p>There are many  embarrassing hidden in the middle of text.</p>
+                    </div>
+                    <div class="recent">
+                        <span>
+                            <img src="/assets/recent_photos.jpg" alt="">
+                        </span>
+                        <p>There are many  embarrassing hidden in the middle of text.</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="sidebar_header">
+                        <h4>Popular photos</h4>
+                    </div>
+                    <ul class="recent_photos">
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                        <li>
+                            <a href="#"><img src="/assets/recent_photos.jpg"></a></li>
+                    </ul>
+                </div>
+
+                <div class="box last">
+                    <div class="sidebar_header">
+                        <h4>Archives</h4>
+                    </div>
+
+                    <ul class="sidebar_menu">
+                        <ul>
+                            <li><a href="#">January 2012</a></li>
+                            <li><a href="#">May 2012</a></li>
+                            <li><a href="#">August 2011</a></li>
+                            <li><a href="#">October 2011</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

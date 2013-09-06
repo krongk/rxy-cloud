@@ -13,7 +13,7 @@ RxyCloud::Application.routes.draw do
   get "page/portfolio"
   get "page/product_item"
   get "page/blog"
-  get "page/blogpost"
+  match "blogpost", :to => "page#blogpost", :via => [:get]
   get "page/private"
   get "page/help"
   get "page/faq"

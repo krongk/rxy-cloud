@@ -4,59 +4,51 @@
         <div class="row sections">
             <div class="span4 recent_posts">
                 <h3 class="footer_header">
-                    Recent Posts
+                    最新博文
                 </h3>
-                <div class="post">
-                    <a href="blogpost.html">
-                        <img src="/assets/recent_post1.png" class="img-circle" />
-                    </a>
-                    <div class="date">
-                        Wed, 12 Dec
+                <% Post.recent(2).each do |post| %>
+                    <div class="post">
+                        <%= link_to image_tag(post.image_url, width: '60px', height: '60px', class: 'img-circle'), "/blogpost?id=#{post.id}", target: '_blank' %>
+                        <div class="date">
+                           <%= post.updated_at.to_s(:db) %>
+                        </div>
+                        <%= link_to post.title.to_s.truncate(20), "/blogpost?id=#{post.id}", class: 'title' %>
                     </div>
-                    <a href="blogpost.html" class="title">
-                        Randomised words which don't look embarrasing hidden.
-                    </a>
-                </div>
-                <div class="post">
-                    <a href="blogpost.html">
-                        <img src="/assets/recent_post2.png" class="img-circle" />
-                    </a>
-                    <div class="date">
-                        Mon, 12 Dec
-                    </div>
-                    <a href="blogpost.html" class="title">
-                        Randomised words which don't look embarrasing hidden.
-                    </a>
-                </div>
+                <% end %>
             </div>
             <div class="span4 testimonials">
                 <h3 class="footer_header">
-                    Testimonials
+                    用户体验
                 </h3>
                 <div class="wrapper">
                     <div class="quote">
                         <span>“</span>
-                        There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                        瑞信云为企业提供完整的移动应用开发和管理集成。建设APP从未如此简单；
+                        一次建设，即可生成基于苹果、安卓、HTML5 Web APP手机应用和强大的管理后台。
+
                         <span></span>
                     </div>
                     <div class="author">
                         <img src="/assets/user-display.png" />
-                        <div class="name">Alejandra Galvan Castillo</div>
+                        <div class="name">瑞信云科技总裁</div>
                         <div class="info">
-                            Details Canvas
+                            彭承
                         </div>
                     </div>
                 </div>
             </div>
             <div class="span4 contact">
                 <h3 class="footer_header">
-                    Contact
+                    联系我们
                 </h3>
-                <form action="#" method="post">
-                    <input type="text" placeholder="Your name" />
-                    <input type="text" placeholder="Your email" />
-                    <textarea rows="3" placeholder="Message"></textarea>
-                    <input type="submit" value="Send" />
+                <form accept-charset="UTF-8" action="/comments" id="new_comment" method="post">
+                    <input name="utf8" type="hidden" value="&#x2713;" />
+                    <input name="authenticity_token" type="hidden" value="uV/dlXiSmha2AdbSoO0R6fojOEPBqxabidgXEXjvW64=" />   
+       
+                    <input type="text" name="comment[name]" placeholder="姓名" />
+                    <input type="text" name="comment[mobile_phone]" placeholder="手机号码, 11位" />
+                    <textarea rows="3" name="comment[content]" placeholder="内容"></textarea>
+                    <input type="submit" value="提交" />
                 </form>
             </div>
         </div>
@@ -64,39 +56,12 @@
             <div class="span12">
                 <div class="row social">
                     <div class="span12">
-                        <a href="#" class="facebook">
-                            <span class="socialicons ico1"></span>
-                            <span class="socialicons_h ico1h"></span>
-                        </a>
-                        <a href="#" class="twitter">
-                            <span class="socialicons ico2"></span>
-                            <span class="socialicons_h ico2h"></span>
-                        </a>
-                        <a href="#" class="gplus">
-                            <span class="socialicons ico3"></span>
-                            <span class="socialicons_h ico3h"></span>
-                        </a>
-                        <a href="#" class="flickr">
-                            <span class="socialicons ico4"></span>
-                            <span class="socialicons_h ico4h"></span>
-                        </a>
-                        <a href="#" class="pinterest">
-                            <span class="socialicons ico5"></span>
-                            <span class="socialicons_h ico5h"></span>
-                        </a>
-                        <a href="#" class="dribble">
-                            <span class="socialicons ico6"></span>
-                            <span class="socialicons_h ico6h"></span>
-                        </a>
-                        <a href="#" class="behance">
-                            <span class="socialicons ico7"></span>
-                            <span class="socialicons_h ico7h"></span>
-                        </a>
+                        
                     </div>
                 </div>
                 <div class="row copyright">
                     <div class="span12">
-                        © 2013 Clean Canvas. All rights reserved. Theme by Detail Canvas.
+                        © 2013 爱布斯.瑞信云科技版权所有.
                     </div>
                 </div>
             </div>            

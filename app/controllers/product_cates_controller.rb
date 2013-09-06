@@ -1,5 +1,5 @@
 class ProductCatesController < ApplicationController
-  before_filter :authenticate_user!, except: [:show, :index]
+  before_filter :authenticate_user!
   before_action :set_product_cate, only: [:show, :edit, :update, :destroy]
 
   # GET /product_cates

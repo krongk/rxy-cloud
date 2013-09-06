@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, except: [:show, :index]
+  before_filter :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -70,6 +70,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :cate, :keywords)
+      params.require(:post).permit(:title, :content, :image_url, :cate, :keywords)
     end
 end
