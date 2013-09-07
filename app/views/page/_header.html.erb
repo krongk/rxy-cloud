@@ -23,7 +23,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <% Post.recent(5).each do |post| %>
-                            <li><%= link_to post.title, "/blogpost?id=#{post.id}", target: '_blank'%></li>
+                            <li><%= link_to post.title, "/blogpost?id=#{post.id}"%></li>
                         <% end %>
                         <li><a href="/page/blog">更多...</a></li>
                     </ul>
