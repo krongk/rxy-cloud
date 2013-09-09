@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  layout 'page', only: [:new, :create]
   before_filter :authenticate_user!, except: [:new, :create]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 

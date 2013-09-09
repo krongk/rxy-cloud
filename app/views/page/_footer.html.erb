@@ -18,7 +18,7 @@
             </div>
             <div class="span4 testimonials">
                 <h3 class="footer_header">
-                    用户体验
+                    企业反馈
                 </h3>
                 <div class="wrapper">
                     <div class="quote">
@@ -41,7 +41,8 @@
                 <h3 class="footer_header">
                     联系我们
                 </h3>
-                <form accept-charset="UTF-8" action="/comments" id="new_comment" method="post">
+                <% @comment ||= Comment.new %>
+                <%= simple_form_for(@comment) do |f| %>
                     <input name="utf8" type="hidden" value="&#x2713;" />
                     <input name="authenticity_token" type="hidden" value="uV/dlXiSmha2AdbSoO0R6fojOEPBqxabidgXEXjvW64=" />   
        
@@ -49,7 +50,7 @@
                     <input type="text" name="comment[mobile_phone]" placeholder="手机号码, 11位" />
                     <textarea rows="3" name="comment[content]" placeholder="内容"></textarea>
                     <input type="submit" value="提交" />
-                </form>
+                <% end %>
             </div>
         </div>
         <div class="row credits">

@@ -1,72 +1,77 @@
+废弃！
+
 <%= content_for(:head) do %>
-  <%= stylesheet_link_tag "theme/contact" %>
+  <%= stylesheet_link_tag "theme/about" %>
 <% end %>
 
-<div id="contact">
+<div id="aboutus">
     <div class="container">
         <div class="section_header">
-            <h3>Get in touch</h3>
+            <h3></h3>
         </div>
-        <div class="row contact">
-            <p>
-                We’d love to hear from you. Interested in working together? Fill out the form below with some info about your project and I will get back to you as soon as I can. Please allow a couple days for me to respond.</p>
-
-            <%= simple_form_for(@comment) do |f| %>
-                <%= f.error_notification %>
-                <div class="row form">
-                    <div class="span6 box">
-                        <input type="text" name="comment[name]" placeholder="姓名" />
-                        <input type="text" name="comment[email]" placeholder="电子邮件" />
-                        <input type="text" name="comment[mobile_phone]" placeholder="手机号码" />
-                    </div>
-                    <div class="span6 box box_r">
-                        <textarea name="comment[content]" placeholder="输入要咨询的内容..."></textarea>
-                    </div>
-                </div>
-
-                <div class="row submit">
-                    <div class="span5 box">
-                        
-                    </div>
-                    <div class="span3 right">
-                        <input type="submit" value="提交我的信息">
-                    </div>
-                </div>
-            <% end %>
-        </div>
-    </div>
-
-    <div class="row map">
-        <div class="container">
-            <div class="span5 box_wrapp">
-                <div class="box_cont">
-                    <div class="head">
-                        <h6>Contact</h6>
-                    </div>
-                    <ul class="street">
-                        <li>2301 East Lamar Blvd. Suite 140.</li>
-                        <li>City, Arlington. United States,</li>
-                        <li>Zip Code, TX 76006.</li>
-                        <li class="icon icontop">
-                            <span class="contacticos ico1"></span>
-                            <span class="text">1 817 274 2933</span>
-                        </li>
-                        <li class="icon">
-                            <span class="contacticos ico2"></span>
-                            <a class="text" href="#">bootstrap@twitter.com</a>
-                        </li>
-                    </ul>
-
-                    <div class="head headbottom">
-                        <h6>Work with us</h6>
-                    </div>
-                    <p>We’ve prepared a simple project planner to get to know you and your project better.</p>
-
-                    <a href="#" class="btn">Let's get started</a>
-                </div>
+        <div class="row">
+            <div class="span6 intro">
+                <h6>瑞信云是一家专业从事于移动互联网产品开发的高新科技企业</h6>
+                我们旨在帮助企业、个人能简单、快速、廉价、高效地建设自己满意的移动营销平台，轻松涉足移动互联网，把握未来。
+                <p>
+                瑞信云平台是国内领先的在线应用开发平台，提供自建、定制、发布、管理一站式服务。通过SaaS模式（软件即服务的模式）向用户提供服务，大大降低了应用的开发、维护成本，同时通过一次开发全平台(IOS/Android/手机网站)适配的创新技术，大大提升了开发效率。该产品已经获得广东网信投资管理有限公司的风险投资。</p>
             </div>
+            <div class="span6 flexslider">
+                  <ul class="slides">
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: none;" class="">
+                      <img src="/assets/about_slide1.jpg">
+                    </li>
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: none;" class="">
+                      <img src="/assets/about_slide1.jpg">
+                    </li>
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;" class="flex-active-slide">
+                      <img src="/assets/about_slide1.jpg">
+                    </li>
+                  </ul>
+            <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="flex-active">3</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
         </div>
-        <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/?ie=UTF8&amp;ll=30.60748139277394,104.00894165039062&amp;spn=0.045157,0.15398&amp;t=m&amp;z=13&amp;output=embed"></iframe>
     </div>
 </div>
 
+<div id="process">
+    <div class="container">
+        <div class="section_header">
+            <h3>我们的价值观</h3>
+        </div>
+        <div class="row services_circles">
+            <div class="span4 description">
+                <div class="text active">
+                    <h4>诚信</h4>
+                    <p>
+                        我们坚信，只有讲求诚信才能最终获得客户的信赖，以诚信作为商业行为的根本是我们所恪遵的信条。</p>
+                </div>
+                <div class="text">
+                    <h4>专业.</h4>
+                    <p>
+                        专业人才、专业服务、专业产品是我们一直以来赖以生存和发展的根本。</p>
+                </div>
+                <div class="text">
+                    <h4>创新</h4>
+                    <p>
+                       创新 - 不断的追求创新是我们成功的基石，是我们发展的动力所在。
+                       创新的本质即帮助企业实现更多的价值</p>
+                </div>
+            </div>
+
+            <div class="span7 areas">
+                <div class="circle active">
+                    <img src="/assets/plan.png">
+                    <span>诚信</span>
+                </div>
+                <div class="circle">
+                    <img src="/assets/develop.png">
+                    <span>专业</span>
+                </div>
+                <div class="circle last_circle">
+                    <img src="/assets/design.png">
+                    <span>创新</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

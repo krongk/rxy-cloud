@@ -1,0 +1,15 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      page: 页面
+    attributes:
+      page:
+        title: 标题
+        content: 内容
+        name: 路径别名
+        keywords: 关键词
+    errors:
+      page: 
+  helpers:
+    page: 

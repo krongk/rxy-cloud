@@ -1,4 +1,6 @@
 RxyCloud::Application.routes.draw do
+  resources :pages
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :resource_items
   resources :posts
@@ -8,6 +10,7 @@ RxyCloud::Application.routes.draw do
 
   get "page/index"
   get "page/about"
+  get "page/contact"
   get "page/features"
   get "page/services"
   get "page/portfolio"

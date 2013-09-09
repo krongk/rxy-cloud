@@ -1,13 +1,20 @@
 class PageController < ApplicationController
   layout 'page'
+  before_action :set_comment
 
   def index
+     @page = Page.find_by(name: 'index')
+     @page ||= Page.first
   end
 
   def about
-    @comment = Comment.new
   end
 
+  def contact
+    @page = Page.find_by(name: 'contact')
+    @page ||= Page.first
+  end
+  
   def features
   end
 
@@ -36,4 +43,10 @@ class PageController < ApplicationController
 
   def faq
   end
+
+  private
+  def set_comment
+    @comment = Comment.new
+  end
+
 end

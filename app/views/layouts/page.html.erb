@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "瑞信云科技" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rxy Cloud" %>">
-    <%= stylesheet_link_tag "application", "theme/theme", "theme/lib/animate", :media => "all" %>
+    <%= stylesheet_link_tag "pages", :media => "all" %>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
      <%= yield(:head) %>
     <%= javascript_include_tag "application" %>
