@@ -8,18 +8,18 @@ RxyCloud::Application.routes.draw do
   resources :product_cates
   resources :comments
 
-  get "page/index"
-  get "page/about"
-  get "page/contact"
-  get "page/features"
-  get "page/services"
-  get "page/portfolio"
-  get "page/product_item"
-  get "page/blog"
+  match "index", :to => "page#index", :via => [:get]
+  match "about", :to => "page#about", :via => [:get]
+  match "contact", :to => "page#contact", :via => [:get]
+  match "features", :to => "page#features", :via => [:get]
+  match "services", :to => "page#services", :via => [:get]
+  match "portfolio", :to => "page#portfolio", :via => [:get]
+  match "product_item", :to => "page#product_item", :via => [:get]
+  match "blog", :to => "page#blog", :via => [:get]
   match "blogpost", :to => "page#blogpost", :via => [:get]
-  get "page/private"
-  get "page/help"
-  get "page/faq"
+  match "private", :to => "page#private", :via => [:get]
+  match "help", :to => "page#help", :via => [:get]
+  match "faq", :to => "page#faq", :via => [:get]
   
   root :to => "page#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

@@ -21,6 +21,8 @@ gem "paperclip"
 gem 'rails-i18n', '~> 4.0.0.pre' # For 4.0.x
 gem 'i18n_yaml_generator'
 
+gem 'jquery-turbolinks'
+
 # For linux
 # group :assets do
 #   gem 'therubyracer', :platform=>:ruby
