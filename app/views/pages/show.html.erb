@@ -1,1 +1,5 @@
+<% if @page.name == 'index' || @page.title == '首页' %>
+  <%= render 'slider' %>
+<% end %>
+
 <%= raw @page.content %>

@@ -6,11 +6,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
-        <%= link_to image_tag("/assets/logo.png"), root_path, :class => 'brand' %>
+        <%= link_to image_tag("/assets/logo.png", width: '80px'), root_path, :class => 'logo' %>
         <div class="nav-collapse collapse">
             <ul class="nav pull-right">
                 <li><a href="/" class="active">首页</a></li>
-                <li><a href="/about">关于瑞信云</a></li>
+                <li><a href="/pages/about">关于瑞信云</a></li>
       
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -18,12 +18,12 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/product">瑞信云产品</a></li>
-                        <li><a href="/service">瑞信云服务</a></li>
-                        <li><a href="/features">功能介绍</a></li>
-                        <li><a href="/templetes">模板介绍</a></li>
-                        <li><a href="/showcase">行业应用方案</a></li>
-                        <li><a href="/markting">企业网络营销整体托管</a></li>
+                        <li><a href="/pages/product">瑞信云产品</a></li>
+                        <li><a href="/pages/service">瑞信云服务</a></li>
+                        <li><a href="/pages/features">功能介绍</a></li>
+                        <li><a href="/pages/templetes">模板介绍</a></li>
+                        <li><a href="/pages/showcase">行业应用方案</a></li>
+                        <li><a href="/pages/markting">企业网络营销整体托管</a></li>
                     </ul>
                 </li>
                 
@@ -36,7 +36,7 @@
                         <% Post.recent(5).each do |post| %>
                             <li><%= link_to post.title, "/blogpost?id=#{post.id}"%></li>
                         <% end %>
-                        <li><a href="/page/blog">更多...</a></li>
+                        <li><a href="/blog">更多...</a></li>
                     </ul>
                 </li>
        
@@ -46,12 +46,12 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="jmzc">经销加盟政策</a></li>
-                        <li><a href="/jmsq">经销加盟申明</a></li>
+                        <li><a href="/pages/jmzc">经销加盟政策</a></li>
+                        <li><a href="/pages/jmsq">经销加盟申明</a></li>
                     </ul>
                 </li>
 
-                <li><a href="/page/contact">联系我们</a></li>
+                <li><a href="pages/contact">联系我们</a></li>
                 <% if user_signed_in? %>
                     <li><%= link_to '后台主页', user_path(current_user), class: "btn-header" %></li>
                     <li><%= link_to '退出', destroy_user_session_path, :method=>'delete', class: "btn-header" %></li>

@@ -12,3 +12,11 @@
  *= require bootstrap_and_overrides
 */
 
+.box{
+  width: 220px;
+  float: left;
+  margin: 20px;
+  padding: 10px;
+  border: solid 1px #ccc;
+  background: #fff;
+}

@@ -1,7 +1,15 @@
 class PagesController < ApplicationController
-  #layout 'page', only: [:show]
-  before_filter :authenticate_user!
+  layout 'page', only: [:show, :blog, :blogpost]
+  before_filter :authenticate_user!, except: [:show]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+
+  def blog
+    @posts = Post.all
+  end
+
+  def blogpost
+    @post = Post.find(params[:id])
+  end
 
   # GET /pages
   # GET /pages.json
@@ -12,6 +20,8 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+    @page = params[:id] =~ /^\d+$/ ? Page.find_by(id: params[:id]) : Page.find_by(name: params[:id])
+    @page ||= Page.first
   end
 
   # GET /pages/new
