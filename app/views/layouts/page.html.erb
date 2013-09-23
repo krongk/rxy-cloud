@@ -15,12 +15,16 @@
     <![endif]-->
 
   </head>
-  <body class="pull_top <%= controller_name %> <%= action_name %>">
+  <% if @page && @page.name == 'index' %>
+    <body class="pull_top index <%= controller_name %> <%= action_name %>">
+  <% else %>
+    <body class="page <%= controller_name %> <%= action_name %>">
+  <% end %>
     <%= render 'pages/header' %>
 
     <div id="showcase">
       <div class="container">
-        fffff<%= render 'layouts/messages' %>
+        <%#= render 'layouts/messages' %>
       </div>
     </div>
 

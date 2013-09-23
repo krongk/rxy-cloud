@@ -1,5 +1,6 @@
 class ProductCatesController < ApplicationController
-  before_filter :authenticate_user!
+  layout 'page', only: [:show]
+  before_filter :authenticate_user!, except: [:show]
   before_action :set_product_cate, only: [:show, :edit, :update, :destroy]
 
   # GET /product_cates
@@ -11,6 +12,7 @@ class ProductCatesController < ApplicationController
   # GET /product_cates/1
   # GET /product_cates/1.json
   def show
+    @product_cates = ProductCate.all
   end
 
   # GET /product_cates/new

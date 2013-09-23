@@ -29,7 +29,7 @@ class ProductItemsController < ApplicationController
 
     respond_to do |format|
       if @product_item.save
-        format.html { redirect_to product_item_path(@product_item), notice: '添加成功.' }
+        format.html { redirect_to product_items_url, notice: '添加成功.' }
         format.json { render action: 'show', status: :created, location: @product_item }
       else
         format.html { render action: 'new' }

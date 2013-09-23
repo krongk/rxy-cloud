@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def blog
-    @posts = Post.all
+    @posts = Post.page(params[:page])
   end
 
   def blogpost
@@ -20,8 +20,6 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = params[:id] =~ /^\d+$/ ? Page.find_by(id: params[:id]) : Page.find_by(name: params[:id])
-    @page ||= Page.first
   end
 
   # GET /pages/new
@@ -40,7 +38,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to pages_url, notice: 'Page was successfully created.' }
+        format.html { redirect_to pages_url, notice: '页面更新成功.' }
         format.json { render action: 'show', status: :created, location: @page }
       else
         format.html { render action: 'new' }
@@ -54,7 +52,7 @@ class PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to pages_url, notice: 'Page was successfully updated.' }
+        format.html { redirect_to pages_url, notice: '页面更新成功.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

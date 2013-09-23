@@ -19,9 +19,9 @@
                     <%= link_to image_tag(post.image_url), "/blogpost?id=#{post.id}" %>
                 </div>
                 <div class="text">
-                    <h5><a href="/blogpost?id=#{post.id}"><%= post.title %>.</a></h5>
+                    <h5><a href="/blogpost?id=<%=post.id %>"><%= post.title %>.</a></h5>
                     <span class="date"><%= post.updated_at.to_s(:db) %></span>
-                    <p><%= raw(strip_tags(post.content)).truncate(60) %></p>
+                    <p><%= raw(strip_tags(post.content)).truncate(40) %></p>
                 </div>
                 <div class="author_box">
                     <h6><%= post.keywords %></h6>

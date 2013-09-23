@@ -1,4 +1,4 @@
-<% if @page.name == 'index' || @page.title == '首页' %>
+<% if @page && (@page.name == 'index' || @page.title == '首页') %>
   <%= render 'slider' %>
 <% end %>
 
