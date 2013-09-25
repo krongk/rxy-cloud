@@ -9,7 +9,7 @@ RxyCloud::Application.routes.draw do
   resources :comments
 
   match "blog", :to => "pages#blog", :via => [:get]
-  match "blogpost", :to => "pages#blogpost", :via => [:get]
+  match "blogpost/:id", :to => "pages#blogpost", :via => [:get]
  
   root :to => "pages#show"
   devise_for :users, :controllers => {:registrations => "registrations"}

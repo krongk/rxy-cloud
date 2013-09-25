@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   layout 'page', only: [:show, :blog, :blogpost]
-  before_filter :authenticate_user!, except: [:show]
+  before_filter :authenticate_user!, except: [:show, :blog, :blogpost]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def blog
