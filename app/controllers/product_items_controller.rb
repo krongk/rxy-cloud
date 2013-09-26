@@ -1,5 +1,6 @@
 class ProductItemsController < ApplicationController
-  before_filter :authenticate_user!
+  layout 'page', only: [:show]
+  before_filter :authenticate_user!, except: [:show]
   before_action :set_product_item, only: [:show, :edit, :update, :destroy]
 
   # GET /product_items

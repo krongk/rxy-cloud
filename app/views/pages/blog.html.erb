@@ -16,10 +16,10 @@
           <% @posts.each do |post| %>
             <div class="span4 post">
                 <div class="img">
-                    <%= link_to image_tag(post.image_url), "/blogpost?id=#{post.id}" %>
+                    <%= link_to image_tag(post.image_url), "/blogpost/#{post.id}" %>
                 </div>
                 <div class="text">
-                    <h5><a href="/blogpost?id=<%=post.id %>"><%= post.title %>.</a></h5>
+                    <h5><a href="/blogpost/<%=post.id %>"><%= post.title.truncate(30) %>.</a></h5>
                     <span class="date"><%= post.updated_at.to_s(:db) %></span>
                     <p><%= raw(strip_tags(post.content)).truncate(40) %></p>
                 </div>

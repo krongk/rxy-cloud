@@ -1,17 +1,27 @@
-<ul class="breadcrumb">
-  <li><%= link_to '修改', edit_product_item_path(@product_item), class: 'btn btn-primary', type: 'button' %><span class="divider">/</span></li>
-  <li><%= link_to '删除', @product_item, method: :delete, data: { confirm: '确定要删除?' }, class: 'btn btn-reverse', type: 'button' %><span class="divider">/</span></li>
-    <li><%= link_to '返回', product_items_url %></li>
-</ul>
+<%= content_for :head do %>
+  <link href="http://www.apps123.cn/templets/apps123/css/layout2013.css" rel="stylesheet" media="screen" type="text/css" />
+  <style>
+    .case-detail-pic{
+      width: 90px;
+      height: 90px;
+    }
+  </style>
 
-<h2>
-  <%= @product_item.title %>
-</h2>
-
-<p>
-  <%= image_tag @product_item.image_url %>
-</p>
-
-<p>
-  <%= raw @product_item.content %>
-</p>
+<% end %>
+<div id="portfolio">
+  <div class="container">
+    <div class="section_header">
+        <h3><%= @product_item.title %></h3>
+        <a href="/product_cates/1" class="btn btn-inverse search-query pull-right">返回项目案例</a>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <div id="filters_container">
+              <p>
+                <%= raw @product_item.content %>
+              </p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

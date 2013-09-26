@@ -1,41 +1,35 @@
-<div class="features_page" id="features">
-  <div class="container"><!-- Feature Wrapper -->
-    <div class="feature_wrapper option2">
-      <div class="section_header">
-        <h3>成功案例</h3>
-      </div>
-      <!-- Features Row -->
-      <div class="row-fluid">
-        <div class="span2 bs-docs-sidebar"  data-spy="affix" data-offset-top="40">
-          <ul class="nav nav-list bs-docs-sidenav">
-            <% @product_cates.each_with_index do |item, index| %>
-              <li><a href="/product_cates/<%= item.id %>#nav<%=index %>"><%= item.name %></a></li>
-            <% end %>
-          </ul>
-        </div>
-
-        <div class="span10" style="margin-left: 180px;">
-          <div class="row"><!-- Feature -->
-            <% @product_cate.product_items.order("updated_at DESC").each do |item| %>
-              <div class="span6 feature">
-                <table class="table table-bordered">
-                  <tr>
-                    <td><%= image_tag item.image_url, width: '200px' %></td>
-                    <td>
-                      <h6><%= item.title %></h6>
-                      <p><span style="line-height:1.6em">
-                      <%= item.content %>
-                      </span></p>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            <% end %>
-            <!-- Feature -->
-          </div><!-- end row -->
-        </div><!-- end span10 -->
+<div id="portfolio">
+<div class="container">
+    <div class="section_header">
+        <!-- <h3>案例展示</h3> -->
     </div>
-  </div>
+    <div class="row">
+        <div class="span12">
+            <div id="filters_container">
+                <ul id="filters">
+                    <% @product_cates.each_with_index do |item, index| %>
+                        <li><a href="/product_cates/<%= item.id%>" data-filter="*" class="<%= index == 0 ? 'active' : '' %>"><%= item.name %></a></li>
+                        <li class="separator">/</li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>            
+    <div class="row">
+        <div class="span12">
+            <div id="gallery_container">
+                <% @product_cate.product_items.each do |item| %>
+                    <div class="photo art web">
+                        <img src="<%= item.image_url %>" style="width: 175px; height: 175px;" />
+                        <%= link_to product_item_path(item), class: 'mask' do %>
+                            <h3><%= item.title %></h3>
+                            <small><%= item.product_cate.name %></small>
+                            <div class="more">+</div>
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>            
 </div>
-
-
+</div>
