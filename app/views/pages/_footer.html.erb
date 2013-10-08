@@ -12,7 +12,7 @@
                         <div class="date">
                            <%= post.updated_at.to_s(:db) %>
                         </div>
-                        <%= link_to post.title.to_s.truncate(20), "/blogpost?id=#{post.id}", class: 'title' %>
+                        <%= link_to post.title.to_s.truncate(20), "/blogpost/{post.id}", class: 'title' %>
                     </div>
                 <% end %>
             </div>

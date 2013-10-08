@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.page(params[:page]).order("created_at DESC")
+    @comments = current_user.comments.page(params[:page]).order("created_at DESC")
   end
 
   # GET /comments/1
