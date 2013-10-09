@@ -1,7 +1,12 @@
 <%= content_for(:head) do %>
   <%= stylesheet_link_tag "theme/blogpost" %>
 <% end %>
-
+<%= content_for(:keywords) do %>
+  <%= @post.keywords %>
+<% end %>
+<%= content_for(:description) do %>
+  <%= @post.title %>
+<% end %>
 
 <div id="blog_post">
     <div class="container">
