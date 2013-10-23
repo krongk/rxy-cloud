@@ -1,3 +1,8 @@
+<% title [@page.title,  "瑞信云"].join(',') %>
+<% meta_keywords [@page.title, @page.keywords, "瑞信云"].join(',') %>
+<% meta_description [ @page.title,  @page.keywords, "瑞信云"].join(',') %>
+
+
 <% if @page && (@page.name == 'index' || @page.title == '首页') %>
   <%= render 'slider' %>
 <% end %>
