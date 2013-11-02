@@ -16,11 +16,12 @@ gem 'figaro'
 gem 'mysql2', '0.3.13'
 gem 'rolify'
 gem 'simple_form', '>= 3.0.0.rc'
-gem "ckeditor"
+gem "ckeditor", :git => "git@github.com:galetahub/ckeditor.git"
 gem "paperclip"
 gem 'rails-i18n', '~> 4.0.0.pre' # For 4.0.x
 gem 'i18n_yaml_generator'
-
+#gem 'font-awesome-sass-rails'
+gem 'font-awesome-sass'
 gem 'jquery-turbolinks'
 
 # For linux

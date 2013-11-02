@@ -18,7 +18,7 @@
     <div class="row">
         <div class="span12">
             <div id="gallery_container">
-                <% @product_cate.product_items.each do |item| %>
+                <% @product_items.each do |item| %>
                     <div class="photo art web">
                         <img src="<%= item.image_url %>" style="width: 175px; height: 175px;" />
                         <%= link_to product_item_path(item), class: 'mask' do %>
@@ -28,6 +28,9 @@
                         <% end %>
                     </div>
                 <% end %>
+            </div>
+            <div class="pagination" style="text-align: center;">
+              <%= will_paginate @product_items %>
             </div>
         </div>
     </div>            

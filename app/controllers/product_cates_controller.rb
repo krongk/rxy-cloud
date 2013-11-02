@@ -6,13 +6,16 @@ class ProductCatesController < ApplicationController
   # GET /product_cates
   # GET /product_cates.json
   def index
-    @product_cates = ProductCate.all
+    @product_cates = ProductCate.page(params[:page]).order("updated_at DESC")
   end
 
   # GET /product_cates/1
   # GET /product_cates/1.json
   def show
     @product_cates = ProductCate.all
+    @product_cate = ProductCate.find_by(id: params[:id])
+    @product_cate ||= ProductCate.first
+    @product_items = ProductItem.where(product_cate_id: @product_cate.id).page(params[:page]).order("updated_at DESC")
   end
 
   # GET /product_cates/new

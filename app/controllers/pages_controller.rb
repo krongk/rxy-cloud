@@ -4,17 +4,18 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def blog
-    @posts = Post.page(params[:page])
+    @posts = Post.page(params[:page]).order("updated_at DESC")
   end
 
   def blogpost
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
+    @post ||= Post.last
   end
 
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.page(params[:page]).order("updated_at DESC")
   end
 
   # GET /pages/1

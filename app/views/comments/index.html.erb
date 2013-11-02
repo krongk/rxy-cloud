@@ -12,7 +12,6 @@
       <th>电子邮件</th>
       <th>手机号</th>
       <th>留言内容</th>
-      <th>是否处理</th>
       <th colspan="3">操作</th>
     </tr>
   </thead>
@@ -25,12 +24,13 @@
         <td><%= comment.email %></td>
         <td><%= comment.mobile_phone %></td>
         <td><%= comment.content %></td>
-        <td><%= comment.is_processed %></td>
         <td><%= link_to '修改', edit_comment_path(comment) %></td>
         <td><%= link_to '删除', comment, method: :delete, data: { confirm: '确定删除?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<div class="pagination" style="text-align: center;">
+  <%= will_paginate @comments %>
+</div>
 <br>

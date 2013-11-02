@@ -12,8 +12,6 @@
       <th>名称</th>
       <th>图片</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -22,12 +20,13 @@
       <tr>
         <td><%= resource_item.name %></td>
         <td><%= image_tag resource_item.avatar.url(:thumb) %></td>
-        <td><%= link_to '查看', resource_item %></td>
-        <td><%= link_to '删除', resource_item, method: :delete, data: { confirm: '确定?' } %></td>
+        <td><%= link_to '查看', resource_item %> &nbsp;|&nbsp;<%= link_to '删除', resource_item, method: :delete, data: { confirm: '确定?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<div class="pagination" style="text-align: center;">
+  <%= will_paginate @resource_items %>
+</div>
 <br>
 

@@ -15,6 +15,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
+//= require ckeditor/override
 //= require ckeditor/init
 //= require_tree .
 //= require turbolinks

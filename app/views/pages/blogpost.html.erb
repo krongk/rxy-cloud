@@ -35,8 +35,22 @@
                     </div>
                 </div>
 
-           
-                <div class="new_comment">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread"></div>
+                <script type="text/javascript">
+                var duoshuoQuery = {short_name:"rxy123"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = 'http://static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] 
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                    </script>
+                <!-- Duoshuo Comment END -->
+
+                <!-- <div class="new_comment">
                     <h4>给我们留言</h4>
                     <form accept-charset="UTF-8" action="/comments" id="new_comment" method="post">
                         <input name="utf8" type="hidden" value="&#x2713;" />
@@ -61,8 +75,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
+                </div>-->
+            </div> 
             
             <!-- SideBar -->
             <div class="span3 sidebar offset1">
@@ -72,11 +86,26 @@
 
                 <ul class="sidebar_menu">
                     <ul>
-                      <% Post.recent(10).each do |post|%>
-                        <li>>> <%=link_to post.title.to_s.truncate(12), "/blogpost/#{post.id}" %></li>
+                      <% Post.recent(20).each do |post|%>
+                        <li><i class="fa fa-book fa-fw"></i><%=link_to post.title.to_s.truncate(12), "/blogpost/#{post.id}", title: post.title %></li>
                       <% end %>
                     </ul>
                 </ul>
+
+                <hr>
+                <div class="sidebar_header">
+                    <h4>需求咨询...</h4>
+                    <em>把您电话告诉我们，我们会在10分钟之内快速响应！</em>
+                </div>
+                <!-- ########将以下代码拷贝到需要提交手机号的网站################################ -->
+                <form accept-charset="UTF-8" action="http://www.65960.com/pcall" id="pcall_form" method="post">
+                  <input class="hidden" id="phone_call_domain" name="phone_call[domain]" type="hidden" value="www.rxy123.com" />
+                  <input class="hidden" id="phone_call_user_id" name="phone_call[user_id]" type="hidden" value="1" />
+                  <input class="string tel optional" id="phone_call_from_phone" name="phone_call[from_phone]" type="tel" placeholder="请输入您的手机号码" />
+                  <input class="btn btn-info" id="phone_call_commit" name="commit" type="submit" value="提交" />
+                </form>
+                <script src="http://www.65960.com/assets/phone_calls.js" charset="utf-8"></script>
+                <!-- ########代码结束################################ -->
             </div>
             <!-- SideBar -->
         </div>

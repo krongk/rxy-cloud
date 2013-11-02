@@ -2,11 +2,34 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
+ *= require font-awesome
  *= require_tree .
 */
 
+/* css for mobile side navbar
+-------------------------------------------------- */
+.navbar-inner .in {
+  background-color: black;
+}
+.navbar-inner .collapsing {
+  background-color: black;
+}
+.nav-collapse {
+  clear: none;
+}
+
 /* css for index v.s. page
 -------------------------------------------------- */
+.navbar-inner .in {
+  background-color: black;
+}
+.navbar-inner .collapsing {
+  background-color: black;
+}
+.nav-collapse {
+  clear: none;
+}
+
 .index .navbar-inner {
   height: 80px;
   padding: 0px 0px;
