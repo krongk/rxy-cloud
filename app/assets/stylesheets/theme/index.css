@@ -612,6 +612,7 @@
         margin-bottom: 0;
     }
     #showcase .features_op1_row .feature .img_box{
+        display: none;
         text-align: center;
     }
     #showcase .features_op1_row .feature .text h6{
