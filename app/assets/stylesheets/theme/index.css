@@ -493,6 +493,24 @@
 #clients .client .client3:hover {
     background-position: 0px 0px;
 }
+#clients .client .client4 {
+    background: url('/assets/client4.png') 0 -75px;
+}
+#clients .client .client4:hover {
+    background-position: 1px 0px;
+}
+#clients .client .client5 {
+    background: url('/assets/client5.png') 0 -75px;
+}
+#clients .client .client5:hover {
+    background-position: 1px 0px;
+}
+#clients .client .client6 {
+    background: url('/assets/client6.png') 0 -75px;
+}
+#clients .client .client6:hover {
+    background-position: 1px 0px;
+}
 #clients .client .img{
     cursor: pointer;    
     -webkit-transition: box-shadow .1s linear;
