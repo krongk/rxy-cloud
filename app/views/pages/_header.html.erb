@@ -14,7 +14,7 @@
         <% if is_mobile_device? %>
             <%= link_to "瑞信云", root_path, :class => 'brand' %>
         <% else %>
-            <%= link_to image_tag("/assets/logo2-2.png", width: '220px', alt: '瑞信云'), root_path, :class => 'brand' %>
+            <%= link_to image_tag("/assets/logo3.png", width: '240px', alt: '瑞信云'), root_path, :class => 'brand' %>
         <% end %>
         <div class="nav-collapse collapse">
             <ul class="nav pull-right">
@@ -61,11 +61,11 @@
                 </li>
 
                 <li><a href="/pages/contact">联系我们</a></li>
-                <% if user_signed_in? %>
-                    <li><%= link_to '后台', user_path(current_user), class: "btn-header", target: "_blank" %></li>
-                <% else %>
-                    <li><%= link_to '登录', new_user_session_path, class: "btn-header" %></li>
-                <% end %>
+         <!--        <%# if user_signed_in? %>
+                    <li><%#= link_to '后台', user_path(current_user), class: "btn-header", target: "_blank" %></li>
+                <%# else %>
+                    <li><%#= link_to '登录', new_user_session_path, class: "btn-header" %></li>
+                <%# end %> -->
             </ul>
         </div>
     </div>
